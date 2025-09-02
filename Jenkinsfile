@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_BFLASK_IMAGE = 'anuruddhaedcd/my-flask-app:latest'
+        DOCKER_BFLASK_IMAGE = 'zonicmki/my-flask-app:latest'
         DOCKER_REGISTRY_CREDS = 'docker-jenkins-token-1'
     }
 
