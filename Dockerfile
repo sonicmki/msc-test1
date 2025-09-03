@@ -1,14 +1,14 @@
-# Use official Python image
-FROM python:3.10-slim
+# Use an official OpenJDK image as the base
+FROM openjdk:17-slim
 
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Copy files
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+# Copy the Java source file into the container
+COPY HelloWorld.java .
 
-COPY . .
+# Compile the Java program
+RUN javac HelloWorld.java
 
-# Default command
-CMD ["python", "app/main.py"]
+# Command to run the program
+CMD ["java", "HelloWorld"]
